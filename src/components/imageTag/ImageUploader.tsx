@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { toast } from 'react-toastify';
 
 import { CameraIcon, SelectedFileIcon } from '../icons/index';
-import { ImageUploaderProps } from 'src/types/types';
-import { FlexBoxCenter, FlexBoxColum } from 'src/styles/styleBox';
-import { LIMIT_10MB } from 'src/utility/guide';
+import { ImageUploaderProps } from 'src/types/common';
+import { FlexCenter, FlexColumn } from 'src/styles/styleFlex';
+import { LIMIT_10MB } from 'src/utility/message';
 
 const ImageUploader = ({ onImageSelect, imageSelected }: ImageUploaderProps) => {
   const [, setImageSelect] = useState(false);
@@ -66,7 +66,7 @@ const S = {
     cursor: pointer;
     opacity: 0;
   `,
-  FileLabel: styled(FlexBoxCenter)<{ imageselected: string }>`
+  FileLabel: styled(FlexCenter)<{ imageselected: string }>`
     cursor: pointer;
     flex-direction: column;
     border-radius: 10px;
@@ -94,7 +94,7 @@ const S = {
     margin-top: 4px;
   `,
 
-  FileAddBox: styled(FlexBoxColum)`
+  FileAddBox: styled(FlexColumn)`
     text-align: center;
     color: var(--neutral-500, #667085);
     font-family: Pretendard;

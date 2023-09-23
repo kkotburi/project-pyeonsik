@@ -1,6 +1,6 @@
 import React from 'react';
 import UserLevel from 'src/components/header/UserLevel';
-import { FlexBox, FlexBoxAlignCenter, FlexBoxCenter, FlexBoxJustifyCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign, FlexCenter, FlexJustify } from 'src/styles/styleFlex';
 import styled from 'styled-components';
 
 interface Props {
@@ -26,14 +26,14 @@ export default CommentUserInfo;
 const S = {
   CommentArea: styled.div``,
   UpWrapper: styled.div``,
-  LowWrapper: styled(FlexBox)`
+  LowWrapper: styled(Flex)`
     gap: 4px;
     margin-left: 45px;
   `,
-  ButtonArea: styled(FlexBoxAlignCenter)`
+  ButtonArea: styled(FlexAlign)`
     margin-left: auto;
   `,
-  UserArea: styled(FlexBoxAlignCenter)``,
+  UserArea: styled(FlexAlign)``,
   ProfileImg: styled.img`
     width: 36px;
     height: 36px;
@@ -98,7 +98,7 @@ const S = {
     font-weight: 400;
     line-height: 20px;
   `,
-  ReCommentAddButton: styled(FlexBoxCenter)`
+  ReCommentAddButton: styled(FlexCenter)`
     margin-top: auto;
     width: 20px;
     height: 20px;
@@ -106,7 +106,7 @@ const S = {
     border: 0.625px solid var(--neutral-500, #667085);
     background: var(--neutral-100, #f2f4f7);
   `,
-  EditButtonArea: styled(FlexBoxAlignCenter)`
+  EditButtonArea: styled(FlexAlign)`
     justify-content: flex-end;
     text-align: center;
 
@@ -116,7 +116,7 @@ const S = {
     font-weight: 400;
     line-height: 16px;
   `,
-  EditButton: styled(FlexBoxJustifyCenter)`
+  EditButton: styled(FlexJustify)`
     width: 28px;
     height: 40px;
     flex-direction: column;

@@ -1,25 +1,20 @@
 import React from 'react';
 import Router from './shared/Router';
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { BrowserRouter } from 'react-router-dom';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { Slide, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './';
-import ReportIcon from './components/report/ReportIcon';
-import SearchSummary from './components/search/SearchSummary';
+
 import { useAtom } from 'jotai';
 import { myPageHover, searchKeyWord } from './globalState/jotai';
+import SearchSummary from './components/search/SearchSummary';
 import MyPageHover from './components/mypage/MyPageHover';
+import ReportIcon from './components/report/ReportIcon';
+
+import { Slide, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// import './';
 
 const queryClient = new QueryClient();
-
-if (process.env.NODE_ENV === 'production') {
-  console = window.console || {};
-  console.log = function no_console() {};
-  console.warn = function no_console() {};
-  console.error = function () {};
-}
 
 const App = () => {
   const [search, _] = useAtom(searchKeyWord);

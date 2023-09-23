@@ -1,6 +1,6 @@
 import React from 'react';
-import { Product } from 'src/types/types';
-import { ERROR_IMG, LOGO_IMAGE } from 'src/utility/guide';
+import { Product } from 'src/types/common';
+import { IMAGE_ERROR, IMAGE_LOGO } from 'src/utility/message';
 import { styled } from 'styled-components';
 
 interface ReviewProductProps {
@@ -11,7 +11,7 @@ const ReviewProduct = ({ prod }: ReviewProductProps) => {
   return (
     <S.ReviewBox key={prod.id}>
       <S.ProdImgBox>
-        <S.ProdImg src={prod.prodImg} alt="상품 사진 없음" onError={ERROR_IMG} />
+        <S.ProdImg src={prod.prodImg} alt="상품 사진 없음" onError={IMAGE_ERROR} />
       </S.ProdImgBox>
       <div>
         <div>{prod.prodName}</div>

@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { atom, useAtom, useSetAtom } from 'jotai';
 
 import ImageTag from './ImageTag';
-import { Tag, AddImageTagProps } from 'src/types/types';
+import { Tag, AddImageTagProps } from 'src/types/common';
 import { AddBtn, TrashCanIcon, ArrowIcon, DotIcon } from '../icons/index';
 import { ArrowIconWrapper, S, DocIconWrapper } from './StyledAddImageTagComponent';
 import { toast } from 'react-toastify';

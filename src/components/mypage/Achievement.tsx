@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import useLoginUserId from 'src/hooks/useLoginUserId';
 import supabase from 'src/lib/supabaseClient';
 import { badgeIconMapping } from './BadgeMapping';
-import { Badge } from 'src/types/types';
-import { FlexBoxCenter } from 'src/styles/styleBox';
+import { Badge } from 'src/types/common';
+import { FlexCenter } from 'src/styles/styleFlex';
 import { calculateUserLevel } from './AchievementExport';
 
 interface UserData {
@@ -101,7 +101,7 @@ const S = {
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
   `,
-  NickNameContainer: styled(FlexBoxCenter)`
+  NickNameContainer: styled(FlexCenter)`
     margin-left: 250px;
     margin-bottom: 10px;
     width: 274px;
@@ -113,7 +113,7 @@ const S = {
     font-family: Pretendard;
     color: #475467;
   `,
-  LevelContainer: styled(FlexBoxCenter)`
+  LevelContainer: styled(FlexCenter)`
     border-radius: 10px;
     border: 2px solid transparent;
     background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #d9d9d9 0%, #ffb334 100%);

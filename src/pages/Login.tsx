@@ -7,7 +7,7 @@ import supabase from 'src/lib/supabaseClient';
 import OAuthLogin from '../components/OAuthLogin';
 import { IconLogoSymbolH32, IconWarning, IconWaterMarkH32 } from 'src/components/icons';
 import { toast } from 'react-toastify';
-import { FlexBox, FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import Register from './Register';
 
@@ -266,7 +266,7 @@ const S = {
     border: 1px solid #efefef;
     padding-right: 35px;
   `,
-  ErrorMessage: styled(FlexBoxCenter)`
+  ErrorMessage: styled(FlexCenter)`
     position: absolute;
     top: 250px;
     left: 98px;

@@ -10,7 +10,7 @@ import ReCommentForMap from './ReCommentForMap';
 import { getReCommentDataByCommentId } from 'src/api/ReComment';
 import { useQuery } from '@tanstack/react-query';
 import CommentUserInfo from './CommentUserInfo';
-import { FlexBox, FlexBoxAlignCenter, FlexBoxCenter, FlexBoxJustifyCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign, FlexCenter, FlexJustify } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
@@ -134,15 +134,15 @@ export default CommentForMap;
 const S = {
   CommentArea: styled.div``,
   UpWrapper: styled.div``,
-  LowWrapper: styled(FlexBox)`
+  LowWrapper: styled(Flex)`
     gap: 4px;
     margin-left: 25px;
     align-items: center;
   `,
-  ButtonArea: styled(FlexBoxAlignCenter)`
+  ButtonArea: styled(FlexAlign)`
     margin-left: auto;
   `,
-  UserArea: styled(FlexBoxAlignCenter)``,
+  UserArea: styled(FlexAlign)``,
   ProfileImg: styled.img`
     width: 36px;
     height: 36px;
@@ -187,7 +187,7 @@ const S = {
 
     ${styleFont.bodyMedium}
   `,
-  ReCommentAddButton: styled(FlexBoxCenter)`
+  ReCommentAddButton: styled(FlexCenter)`
     cursor: pointer;
 
     margin-top: auto;
@@ -197,20 +197,20 @@ const S = {
     border: 0.625px solid var(--neutral-500, #667085);
     background: var(--neutral-100, #f2f4f7);
   `,
-  ReCommentAddButtonEmpty: styled(FlexBoxCenter)`
+  ReCommentAddButtonEmpty: styled(FlexCenter)`
     margin-top: auto;
     width: 20px;
     height: 20px;
     border-radius: 125px;
   `,
-  EditButtonArea: styled(FlexBoxAlignCenter)`
+  EditButtonArea: styled(FlexAlign)`
     justify-content: flex-end;
 
     text-align: center;
 
     ${styleFont.bodySmall}
   `,
-  EditButton: styled(FlexBoxJustifyCenter)`
+  EditButton: styled(FlexJustify)`
     cursor: pointer;
 
     width: 28px;
@@ -224,7 +224,7 @@ const S = {
   ReCommentInputArea: styled.div`
     margin-top: 16px;
   `,
-  ReCommentRenderArea: styled(FlexBox)`
+  ReCommentRenderArea: styled(Flex)`
     margin-top: 24px;
     margin-left: 50px;
     flex-direction: column;

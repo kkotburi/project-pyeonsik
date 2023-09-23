@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { confirmAlert, ReactConfirmAlertProps } from 'react-confirm-alert';
-import { FlexBox, FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import AchievementModal from '../mypage/AchievementModal';
 
@@ -63,7 +63,7 @@ const BoardAlert = () => {
 
 export default BoardAlert;
 
-const ButtonBasic = styled(FlexBoxCenter)`
+const ButtonBasic = styled(FlexCenter)`
   width: 122px;
   height: 36px;
   border-radius: 6px;
@@ -81,7 +81,7 @@ const S = {
     z-index: 102;
     overflow: hidden;
   `,
-  Background: styled(FlexBoxCenter)`
+  Background: styled(FlexCenter)`
     position: fixed;
     top: 0;
     right: 0;
@@ -90,7 +90,7 @@ const S = {
     background: rgba(36, 36, 36, 0.2);
     z-index: 101;
   `,
-  ConfirmBox: styled(FlexBoxAlignCenter)`
+  ConfirmBox: styled(FlexAlign)`
     width: 400px;
     height: 278px;
     border-radius: 10px;
@@ -129,7 +129,7 @@ const S = {
     ${styleFont.labelLarge};
     color: var(--neutral-400, #98a2b3);
   `,
-  ButtonArea: styled(FlexBox)`
+  ButtonArea: styled(Flex)`
     cursor: pointer;
     margin-bottom: 16px;
   `,

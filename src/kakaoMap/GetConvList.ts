@@ -1,4 +1,4 @@
-import { ConvsInform } from 'src/types/types';
+import { ConvsInform } from 'src/types/common';
 import { GetDistanceBtw } from './GetDistanceBtw';
 
 const MAX_RESULTS = 5;

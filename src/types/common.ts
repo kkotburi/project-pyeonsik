@@ -1,3 +1,4 @@
+// props
 export interface InputProps {
   type: string;
   name: string;
@@ -18,6 +19,56 @@ export interface TextAreaInputProps {
   autoFocus?: boolean;
 }
 
+export interface CommonBodyProps {
+  body: string;
+  setBody: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface BottomFunctionProps {
+  userId: string;
+  post: Post;
+}
+
+export interface RankProps {
+  $isfirst?: boolean;
+}
+
+export interface ImageTagProps {
+  onTagsAndResultsChange: (tags: Tag[], searchResults: Data[]) => void;
+  onImageSelect: (selectedImage: File) => void;
+  onContentsChange: (contents: string) => void;
+  onReplace?: (replacementImage: File) => void;
+  imageData?: File;
+  tagData?: Tag[] | null;
+  body?: string | null;
+}
+
+export interface ImageTagPropsToAddImageComponent {
+  onImageSelect?: (selectedImage: File) => void;
+}
+
+export interface SearchProps {
+  onSearchResultSelect: (result: Data) => void;
+}
+
+export interface ImageUploaderProps {
+  onImageSelect: (imageFile: File) => void;
+  imageSelected: string;
+}
+export interface TagImageProps {
+  imageUrl?: string;
+  recipeBody: string;
+  tagsForImage?: ImageTag[];
+}
+
+export interface AddImageTagProps {
+  imageData?: File[];
+  tagData?: Tag[][] | null;
+  body?: string[] | null;
+  isEditMode?: boolean;
+}
+
+// post
 export interface Post {
   id: string;
   created_at: string;
@@ -39,16 +90,6 @@ export interface PostUserProfile {
   id: string;
   nickname: string;
   profileImg: string;
-}
-
-export interface CommonBodyProps {
-  body: string;
-  setBody: React.Dispatch<React.SetStateAction<string>>;
-}
-
-export interface BottomFunctionProps {
-  userId: string;
-  post: Post;
 }
 
 export interface NewPost {
@@ -102,12 +143,11 @@ export interface NewPostBookmark {
   userId: string;
 }
 
-export interface UserType {
-  uid: string;
-  email: string;
-  password: string;
-  nickname: string;
-  profileimg: File | null;
+export interface InfinityPostList {
+  posts: Post[];
+  page: number;
+  total_pages: number;
+  total_results: number | null;
 }
 
 export interface Likes {
@@ -116,15 +156,7 @@ export interface Likes {
   postId: string;
 }
 
-export interface RankProps {
-  $isfirst?: boolean;
-}
-
-export interface RenderComponents {
-  type: string;
-  component: JSX.Element;
-}
-
+// image tag
 export interface Tag {
   x: number;
   y: number;
@@ -161,43 +193,7 @@ export interface ImageData {
   tags: Tag[];
 }
 
-export interface Data {
-  prodName: string;
-  prodImg: string;
-  prodBrand: string;
-  prodCategory: string;
-  price: string;
-  id: string;
-}
-
-export interface ImageTagProps {
-  onTagsAndResultsChange: (tags: Tag[], searchResults: Data[]) => void;
-  onImageSelect: (selectedImage: File) => void;
-  onContentsChange: (contents: string) => void;
-  onReplace?: (replacementImage: File) => void;
-  imageData?: File;
-  tagData?: Tag[] | null;
-  body?: string | null;
-}
-
-export interface ImageTagPropsToAddImageComponent {
-  onImageSelect?: (selectedImage: File) => void;
-}
-
-export interface SearchProps {
-  onSearchResultSelect: (result: Data) => void;
-}
-
-export interface ImageUploaderProps {
-  onImageSelect: (imageFile: File) => void;
-  imageSelected: string;
-}
-export interface TagImageProps {
-  imageUrl?: string;
-  recipeBody: string;
-  tagsForImage?: ImageTag[];
-}
-
+// product
 export interface ProdEvent {
   type: string;
 }
@@ -221,18 +217,27 @@ export interface InfinityProductList {
   total_results: number | null;
 }
 
-export interface InfinityPostList {
-  posts: Post[];
-  page: number;
-  total_pages: number;
-  total_results: number | null;
+// etc.
+export interface RenderComponents {
+  type: string;
+  component: JSX.Element;
 }
 
-export interface AddImageTagProps {
-  imageData?: File[];
-  tagData?: Tag[][] | null;
-  body?: string[] | null;
-  isEditMode?: boolean;
+export interface UserType {
+  uid: string;
+  email: string;
+  password: string;
+  nickname: string;
+  profileimg: File | null;
+}
+
+export interface Data {
+  prodName: string;
+  prodImg: string;
+  prodBrand: string;
+  prodCategory: string;
+  price: string;
+  id: string;
 }
 
 export interface ConvsInform {

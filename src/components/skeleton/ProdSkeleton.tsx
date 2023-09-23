@@ -1,5 +1,5 @@
 import React from 'react';
-import { SkeletonItem } from 'src/styles/styleBox';
+import { SkeletonItem } from 'src/styles/styleSkeleton';
 import styled from 'styled-components';
 
 const ProdSkeleton = () => {

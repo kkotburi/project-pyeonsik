@@ -1,4 +1,4 @@
-import { FlexBox, FlexBoxCenter } from 'src/styles/styleBox';
+import { Flex, FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import styled, { css } from 'styled-components';
 
@@ -7,7 +7,7 @@ interface LocationProps {
 }
 
 export const S = {
-  FunctionButtonBox: styled(FlexBoxCenter)<LocationProps>`
+  FunctionButtonBox: styled(FlexCenter)<LocationProps>`
     gap: ${(props) => {
       switch (props.$location) {
         case '/':
@@ -79,7 +79,7 @@ export const S = {
 
   LinkBubble: styled.div``,
 
-  LinkTail: styled(FlexBox)`
+  LinkTail: styled(Flex)`
     margin-top: 30.9px;
 
     width: 14px;
@@ -90,7 +90,7 @@ export const S = {
     backdrop-filter: blur(25px);
   `,
 
-  LinkTailFalse: styled(FlexBox)`
+  LinkTailFalse: styled(Flex)`
     z-index: 1;
     background: #fff;
 
@@ -100,7 +100,7 @@ export const S = {
     transform: rotate(45deg);
   `,
 
-  LinkBox: styled(FlexBox)`
+  LinkBox: styled(Flex)`
     gap: 16px;
 
     margin-top: -7.9px;

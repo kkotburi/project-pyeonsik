@@ -1,9 +1,9 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getNewProd } from 'src/api/product';
-import { Product } from 'src/types/types';
-import { ERROR_IMG, IMAGE_EMPTY } from 'src/utility/guide';
-import { FlexBoxAlignCenter, FlexBoxCenter, FlexBoxColum } from 'src/styles/styleBox';
+import { Product } from 'src/types/common';
+import { IMAGE_ERROR, IMAGE_EMPTY } from 'src/utility/message';
+import { FlexAlign, FlexCenter, FlexColumn } from 'src/styles/styleFlex';
 
 import styled from 'styled-components';
 import { styleFont } from 'src/styles/styleFont';
@@ -52,7 +52,7 @@ const NewReview = () => {
       {randomProducts()?.map((prod) => {
         return (
           <S.ReviewBox key={prod.id}>
-            <S.ProdImg src={prod.prodImg} alt="상품 사진 없음" onError={ERROR_IMG} />
+            <S.ProdImg src={prod.prodImg} alt="상품 사진 없음" onError={IMAGE_ERROR} />
             <div>
               <S.TopContainer>
                 <S.ProdBrand brand={prod.prodBrand}>{setBrandName(prod.prodBrand)}</S.ProdBrand>
@@ -76,7 +76,7 @@ const NewReview = () => {
 export default NewReview;
 
 const S = {
-  ContentsArea: styled(FlexBoxColum)`
+  ContentsArea: styled(FlexColumn)`
     cursor: pointer;
 
     width: 296px;
@@ -87,7 +87,7 @@ const S = {
     text-align: center;
   `,
 
-  ReviewBox: styled(FlexBoxAlignCenter)`
+  ReviewBox: styled(FlexAlign)`
     width: 280px;
     height: 60px;
   `,
@@ -101,14 +101,14 @@ const S = {
     margin: 6px 8px 6px 6px;
   `,
 
-  TopContainer: styled(FlexBoxAlignCenter)`
+  TopContainer: styled(FlexAlign)`
     width: 216px;
     gap: 4px;
     margin: 10px 0px 2px 0px;
     color: var(--font-black, var(--Black, #242424));
   `,
 
-  ProdBrand: styled(FlexBoxCenter)<{ brand: string }>`
+  ProdBrand: styled(FlexCenter)<{ brand: string }>`
     width: 54px;
     height: 14px;
     border-radius: 100px;
@@ -148,9 +148,9 @@ const S = {
     ${styleFont.bodyMedium}
   `,
 
-  BottomContainer: styled(FlexBoxAlignCenter)``,
+  BottomContainer: styled(FlexAlign)``,
 
-  IconGoodFaceBox: styled(FlexBoxCenter)`
+  IconGoodFaceBox: styled(FlexCenter)`
     width: 10px;
     height: 10px;
   `,

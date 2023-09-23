@@ -6,19 +6,19 @@ import styled from 'styled-components';
 import { useAtom } from 'jotai';
 import { userAtom, userSettingEmail } from 'src/globalState/jotai';
 import { toast } from 'react-toastify';
-import { FlexBoxCenter, FlexBoxAlignCenter } from 'src/styles/styleBox';
+import { FlexCenter, FlexAlign } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import { IconCameraSmall } from '../icons';
 import {
-  CORRECT_NICK_MESSAGES,
+  NICKNAME_CORRECT,
   LIMIT_3MB,
-  MAX_NICKNAME_LENGTH,
+  NICKNAME_MAX,
   NICKNAME_ALREADY,
   NICKNAME_DIGITS,
   NICKNAME_FORM,
   NICKNAME_INPUT,
   NICKNAME_SLANG
-} from 'src/utility/guide';
+} from 'src/utility/message';
 import { debounce } from 'lodash';
 import { useQueryClient } from '@tanstack/react-query';
 import useLoginUserId from 'src/hooks/useLoginUserId';
@@ -96,8 +96,8 @@ const ProfileSetForm = () => {
         setErrorMessage(NICKNAME_ALREADY);
       } else {
         setIsError(false);
-        const randomIndex = Math.floor(Math.random() * CORRECT_NICK_MESSAGES.length);
-        const randomMessage = CORRECT_NICK_MESSAGES[randomIndex];
+        const randomIndex = Math.floor(Math.random() * NICKNAME_CORRECT.length);
+        const randomMessage = NICKNAME_CORRECT[randomIndex];
         setSuccessMessage(randomMessage);
       }
     }
@@ -109,7 +109,7 @@ const ProfileSetForm = () => {
   useEffect(() => {
     observeNickName();
 
-    if (nickname.length < MAX_NICKNAME_LENGTH) {
+    if (nickname.length < NICKNAME_MAX) {
       setNickNameColor('black');
     } else setNickNameColor('red');
   }, [nickname]);
@@ -152,7 +152,7 @@ const ProfileSetForm = () => {
   };
 
   const handleDebounce = debounce((nickname: string) => {
-    if (nickname.length > MAX_NICKNAME_LENGTH) setNickname((prevNickname) => prevNickname.slice(0, -1));
+    if (nickname.length > NICKNAME_MAX) setNickname((prevNickname) => prevNickname.slice(0, -1));
   }, 10);
 
   return (
@@ -179,14 +179,14 @@ const ProfileSetForm = () => {
       </S.ProfileBox>
       <S.InputArea>
         <S.Input
-          maxLength={MAX_NICKNAME_LENGTH}
+          maxLength={NICKNAME_MAX}
           type="text"
           value={nickname}
           placeholder={NICKNAME_INPUT}
           onChange={nickNameHandler}
         />
         <S.InputLimtArea color={nickNameColor}>
-          {nickname.length}/{MAX_NICKNAME_LENGTH}
+          {nickname.length}/{NICKNAME_MAX}
         </S.InputLimtArea>
       </S.InputArea>
       {!isError && <S.SuccessMessage>{successMessage}</S.SuccessMessage>}
@@ -203,7 +203,7 @@ const ProfileSetForm = () => {
 export default ProfileSetForm;
 
 const S = {
-  Container: styled(FlexBoxCenter)`
+  Container: styled(FlexCenter)`
     padding: 30px;
     width: 490px;
     height: 360px;
@@ -220,7 +220,7 @@ const S = {
     margin-bottom: 26px;
     position: relative;
   `,
-  ProfileChangeButton: styled(FlexBoxCenter)`
+  ProfileChangeButton: styled(FlexCenter)`
     cursor: pointer;
     width: 30px;
     height: 30px;
@@ -246,7 +246,7 @@ const S = {
   ProfileInput: styled.input`
     display: none;
   `,
-  InputArea: styled(FlexBoxCenter)`
+  InputArea: styled(FlexCenter)`
     width: 294px;
     height: 42px;
     border-radius: 6px;
@@ -284,7 +284,7 @@ const S = {
     color: #4285f4;
     ${styleFont.bodyMedium}
   `,
-  SubmitDisable: styled(FlexBoxCenter)`
+  SubmitDisable: styled(FlexCenter)`
     cursor: pointer;
     display: flex;
     width: 294px;
@@ -297,7 +297,7 @@ const S = {
     text-align: center;
     ${styleFont.buttonSmall}
   `,
-  Submit: styled(FlexBoxCenter)`
+  Submit: styled(FlexCenter)`
     cursor: pointer;
     display: flex;
     width: 294px;

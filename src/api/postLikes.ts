@@ -1,5 +1,5 @@
 import supabase from 'src/lib/supabaseClient';
-import { NewPostLike } from 'src/types/types';
+import { NewPostLike } from 'src/types/common';
 
 const getPostLike = async (postId: string) => {
   const response = await supabase.from('post_likes').select('*').eq('postId', postId);

@@ -1,4 +1,4 @@
-import { FlexBoxAlignCenter, FlexBoxJustifyCenter } from 'src/styles/styleBox';
+import { FlexAlign, FlexJustify } from 'src/styles/styleFlex';
 import styled from 'styled-components';
 
 export const S = {
@@ -6,7 +6,7 @@ export const S = {
     margin: 20px 50px;
   `,
 
-  OrgTextBox: styled(FlexBoxAlignCenter)`
+  OrgTextBox: styled(FlexAlign)`
     margin: 0px 0px 10px 0px;
     gap: 4px;
   `,
@@ -25,7 +25,7 @@ export const S = {
     line-height: 24px;
   `,
 
-  OrgContentsBox: styled(FlexBoxJustifyCenter)`
+  OrgContentsBox: styled(FlexJustify)`
     width: 790px;
     height: 80px;
     padding: 16px;
@@ -45,7 +45,7 @@ export const S = {
     line-height: 24px;
   `,
 
-  OrgInfoBox: styled(FlexBoxAlignCenter)`
+  OrgInfoBox: styled(FlexAlign)`
     gap: 4px;
 
     color: var(--font-black, var(--black, #242424));

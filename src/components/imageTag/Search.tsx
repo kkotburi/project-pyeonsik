@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import supabase from 'src/lib/supabaseClient';
-import { Data } from 'src/types/types';
-import { SearchProps } from 'src/types/types';
+import { Data } from 'src/types/common';
+import { SearchProps } from 'src/types/common';
 import { ReactComponent as SearchIcon } from 'src/components/imageTag/svg/SearchIcon.svg';
-import { FlexBox, FlexBoxAlignCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign } from 'src/styles/styleFlex';
 import debounce from 'lodash/debounce';
 import { setBrandName } from 'src/function/setBrandName';
-import { ERROR_IMG } from 'src/utility/guide';
+import { IMAGE_ERROR } from 'src/utility/message';
 
 const Search = ({ onSearchResultSelect }: SearchProps) => {
   const [searchKeyword, setSearchKeyword] = useState<string>('');
@@ -94,7 +94,7 @@ const Search = ({ onSearchResultSelect }: SearchProps) => {
             <S.SearchResultItem key={index} onClick={() => handleSelectResult(result)}>
               <S.ImageAndTextContainer>
                 <S.ImageContainer>
-                  <img src={result.prodImg} alt="상품 사진 없음" onError={ERROR_IMG} />
+                  <img src={result.prodImg} alt="상품 사진 없음" onError={IMAGE_ERROR} />
                 </S.ImageContainer>
                 <S.TextContainer>
                   <S.ProdContainer>{setBrandName(result.prodBrand)}</S.ProdContainer>
@@ -116,7 +116,7 @@ const S = {
     position: relative;
     padding: 20px;
   `,
-  SearchInputArea: styled(FlexBox)`
+  SearchInputArea: styled(Flex)`
     width: 356px;
     height: 42px;
 
@@ -125,7 +125,7 @@ const S = {
 
     border: 1px solid #ccc;
   `,
-  SearchInput: styled(FlexBox)`
+  SearchInput: styled(Flex)`
     width: 80%;
 
     outline: none;
@@ -177,7 +177,7 @@ const S = {
     }
   `,
 
-  SearchResultItem: styled(FlexBox)`
+  SearchResultItem: styled(Flex)`
     border-radius: 10px;
     cursor: pointer;
     width: 335px;
@@ -204,9 +204,9 @@ const S = {
     }
   `,
 
-  ImageAndTextContainer: styled(FlexBoxAlignCenter)``,
+  ImageAndTextContainer: styled(FlexAlign)``,
 
-  TextContainer: styled(FlexBox)`
+  TextContainer: styled(Flex)`
     flex-direction: column;
     margin-left: 10px;
     color: #000;

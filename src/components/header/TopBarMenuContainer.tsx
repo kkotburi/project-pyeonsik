@@ -9,11 +9,11 @@ import { getUserData } from 'src/api/userLogin';
 import useLoginUserId from 'src/hooks/useLoginUserId';
 import { useQuery } from '@tanstack/react-query';
 import { IconBell } from '../icons';
-import { FlexBox, FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import UserLevel from './UserLevel';
 import { toast } from 'react-toastify';
-import { EMAIL_CHECK, NON_MEMBER, SERVICE_PREPARING } from 'src/utility/guide';
+import { EMAIL_CHECK, AUTH_NONE, PREPARING_SERVICE } from 'src/utility/message';
 
 interface User {
   id: string;
@@ -102,7 +102,7 @@ const TopBarMenuContainer = () => {
 
   const clickReview = () => {
     if (!userId && !userLogin) {
-      toast(NON_MEMBER);
+      toast(AUTH_NONE);
       return;
     }
     navigate('/review_swiper');
@@ -171,7 +171,7 @@ interface ImageProps {
 }
 
 const S = {
-  TopBarMenuContainer: styled(FlexBoxAlignCenter)`
+  TopBarMenuContainer: styled(FlexAlign)`
     gap: 24px;
 
     position: absolute;
@@ -182,11 +182,11 @@ const S = {
     display: flex;
   `,
 
-  QuickButtonArea: styled(FlexBoxAlignCenter)`
+  QuickButtonArea: styled(FlexAlign)`
     gap: 8px;
   `,
 
-  QuickButton: styled(FlexBoxAlignCenter)`
+  QuickButton: styled(FlexAlign)`
     border-radius: 100px;
     border: 1px solid var(--neutral-200, #e4e7ec);
     padding: 3px 18px;
@@ -203,7 +203,7 @@ const S = {
       border: 1px solid var(--main, #f02826);
     }
   `,
-  QuickPostButton: styled(FlexBoxAlignCenter)`
+  QuickPostButton: styled(FlexAlign)`
     border-radius: 100px;
     border: 1px solid var(--neutral-200, #e4e7ec);
     padding: 3px 18px;
@@ -222,11 +222,11 @@ const S = {
       border: 1px solid var(--main, #f02826);
     }
   `,
-  TopBarLogContainer: styled(FlexBoxAlignCenter)<{ $logged: boolean }>`
+  TopBarLogContainer: styled(FlexAlign)<{ $logged: boolean }>`
     gap: ${(props) => (props.$logged ? '0px' : '12px')};
   `,
 
-  TopBarLogButton: styled(FlexBoxCenter)<Props>`
+  TopBarLogButton: styled(FlexCenter)<Props>`
     cursor: pointer;
 
     border-radius: 4px;
@@ -280,7 +280,7 @@ const S = {
     position: fixed;
   `,
 
-  ProfileTapMenu: styled(FlexBox)`
+  ProfileTapMenu: styled(Flex)`
     top: 0;
     right: calc((100vw - 1280px) / 2 + 16px);
 

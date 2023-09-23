@@ -4,10 +4,10 @@ import ReactQuill, { Quill } from 'react-quill';
 import { ImageResize } from 'quill-image-resize-module-ts';
 import 'react-quill/dist/quill.snow.css';
 import 'src/components/post/write/StyledEditorQuill.css';
-import { CommonBodyProps } from 'src/types/types';
+import { CommonBodyProps } from 'src/types/common';
 
 import { toast } from 'react-toastify';
-import { LIMIT_3MB } from 'src/utility/guide';
+import { LIMIT_3MB } from 'src/utility/message';
 
 Quill.register('modules/ImageResize', ImageResize);
 

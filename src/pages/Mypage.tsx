@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { RenderComponents } from 'src/types/types';
+import { RenderComponents } from 'src/types/common';
 import { styled } from 'styled-components';
 import Profile from 'src/components/mypage/Profile';
 import MyPost from 'src/components/mypage/MyPost';

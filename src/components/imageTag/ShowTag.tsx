@@ -1,6 +1,6 @@
 import React, { CSSProperties, useState } from 'react';
 
-import { Tag, TagImageProps } from 'src/types/types';
+import { Tag, TagImageProps } from 'src/types/common';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { ReactComponent as TagIcon } from 'src/components/imageTag/svg/TagIcon.svg';

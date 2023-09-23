@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalFont = createGlobalStyle`
-
+const GlobalFont = createGlobalStyle`
 @font-face {
     font-family: 'Pretendard';
     font-weight: 100;
@@ -101,3 +100,5 @@ export const GlobalFont = createGlobalStyle`
         url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Black.ttf') format("truetype");
     font-display: swap;
 }`;
+
+export default GlobalFont;

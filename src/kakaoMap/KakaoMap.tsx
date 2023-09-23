@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import 'react-kakao-maps-sdk';
-import { ConvsInform } from 'src/types/types';
+import { ConvsInform } from 'src/types/common';
 import { GetConvList } from './GetConvList';
 import styled from 'styled-components';
 import { CU, Emart24, GS25, IconMap, SevenEleven } from 'src/components/icons';
 import { styleFont } from 'src/styles/styleFont';
-import { FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 import NearByBox from 'src/components/sidebar/event/NearByBox';
 import { Link } from 'react-router-dom';
 
@@ -149,7 +149,7 @@ const KakaoMap = () => {
 export default KakaoMap;
 
 const S = {
-  Container: styled(FlexBoxCenter)`
+  Container: styled(FlexCenter)`
     padding: 16px 8px 0 8px;
     flex-direction: column;
   `,
@@ -171,10 +171,10 @@ const S = {
     margin-bottom: 15px;
     ${styleFont.buttonSmall}
   `,
-  IconBox: styled(FlexBoxCenter)`
+  IconBox: styled(FlexCenter)`
     margin-right: 2px;
   `,
-  NearByStore: styled(FlexBoxCenter)`
+  NearByStore: styled(FlexCenter)`
     width: 280px;
     height: 76px;
     background: var(--neutral-100, #f2f4f7);
@@ -185,7 +185,7 @@ const S = {
     margin-bottom: 11px;
     height: 20px;
   `,
-  StoreInfo: styled(FlexBoxAlignCenter)``,
+  StoreInfo: styled(FlexAlign)``,
   StoreName: styled.p`
     color: var(--font-black, var(--Black, #242424));
     text-align: center;
@@ -205,7 +205,7 @@ const S = {
     font-weight: 400;
     line-height: 16px;
   `,
-  NearByBrand: styled(FlexBoxAlignCenter)`
+  NearByBrand: styled(FlexAlign)`
     flex-direction: column;
     gap: 8px;
     margin: 16px 0px 12px 0px;

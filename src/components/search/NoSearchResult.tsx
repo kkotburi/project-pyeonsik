@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlexBoxCenter } from 'src/styles/styleBox';
+import { FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import styled from 'styled-components';
 import { IconNoSearchResult } from '../icons';
@@ -33,7 +33,7 @@ const NoSearchResult = () => {
 export default NoSearchResult;
 
 const S = {
-  Container: styled(FlexBoxCenter)`
+  Container: styled(FlexCenter)`
     flex-direction: column;
     margin-top: 200px;
   `,

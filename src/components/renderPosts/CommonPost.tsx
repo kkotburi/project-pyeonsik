@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { Post, PostUserProfile } from 'src/types/types';
+import { Post, PostUserProfile } from 'src/types/common';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 

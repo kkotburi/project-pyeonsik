@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 
-import { Tag, Data } from 'src/types/types';
-import { ImageTagProps } from 'src/types/types';
+import { Tag, Data } from 'src/types/common';
+import { ImageTagProps } from 'src/types/common';
 import ImageUploader from './ImageUploader';
 import Search from './Search';
 import PostWriteBodyInput from '../post/write/PostWriteBodyInput';

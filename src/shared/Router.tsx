@@ -1,10 +1,11 @@
 import React from 'react';
 import { Location, Route, Routes, useLocation } from 'react-router-dom';
-import { GlobalStyle } from '../styles/GlobalStyle';
-import { GlobalFont } from 'src/styles/GlobalFont';
-import { PrivateRoute } from './PrivateRoute';
-import Layout from '../layout/Layout';
-import Main from '../pages/Main';
+import GlobalStyle from 'src/styles/GlobalStyle';
+import GlobalFont from 'src/styles/GlobalFont';
+
+import PrivateRoute from './PrivateRoute';
+import Layout from 'src/layout/Layout';
+import Main from 'src/pages/Main';
 import Login from 'src/pages/Login';
 import Register from 'src/pages/Register';
 import PasswordReset from 'src/pages/PasswordReset';
@@ -18,6 +19,7 @@ import SearchResult from 'src/pages/SearchResult';
 import PostModal from 'src/pages/PostModal';
 import Report from 'src/pages/Report';
 import ReviewList from 'src/pages/ReviewList';
+
 import ProdReviewSwiper from 'src/components/detail/prodReview/ProdReviewSwiper';
 import ReviewLocation from 'src/components/detail/prodReview/ReviewLocation';
 
@@ -43,7 +45,6 @@ const Router = () => {
           <Route path="/review_list" element={<ReviewList />} />
           <Route path="/review_swiper" element={<ProdReviewSwiper />} />
           <Route path="/review_product/:id" element={<ReviewLocation />} />
-
           <Route element={<PrivateRoute />}>
             <Route path="/mypage/:tab" element={<Mypage />} />
             <Route path="/write" element={<Write />} />

@@ -3,12 +3,12 @@ import { useInView } from 'react-intersection-observer';
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 import { getNewProdInfinite } from 'src/api/product';
 import { getSwiperData } from 'src/api/ReviewSwiper';
-import { Swiper } from 'src/types/types';
-import { ERROR_IMG, IMAGE_EMPTY } from 'src/utility/guide';
+import { Swiper } from 'src/types/common';
+import { IMAGE_ERROR, IMAGE_EMPTY } from 'src/utility/message';
 import MyEvaluation from './MyEvaluation';
 import EvaluationGraph from './EvaluationGraph';
 import { styled } from 'styled-components';
-import { FlexBoxAlignCenter, FlexBoxCenter, FlexBoxColum } from 'src/styles/styleBox';
+import { FlexAlign, FlexCenter, FlexColumn } from 'src/styles/styleFlex';
 import { useNavigate } from 'react-router';
 
 const ProdReviewList = () => {
@@ -66,7 +66,7 @@ const ProdReviewList = () => {
       {products?.map((prod) => {
         return (
           <S.ReviewBox key={prod.id} onClick={() => con(prod.id, prod.userId)}>
-            <S.ProdImg src={prod.prodImg} alt="상품 사진 없음" onError={ERROR_IMG} />
+            <S.ProdImg src={prod.prodImg} alt="상품 사진 없음" onError={IMAGE_ERROR} />
             <S.TextContainer>
               <S.ProdName>{prod.prodName}</S.ProdName>
               <MyEvaluation swipers={swipers} prodId={prod.id} />
@@ -91,11 +91,11 @@ const S = {
     height: 200px;
   `,
 
-  ReviewContainer: styled(FlexBoxColum)`
+  ReviewContainer: styled(FlexColumn)`
     gap: 20px;
   `,
 
-  ReviewBox: styled(FlexBoxAlignCenter)`
+  ReviewBox: styled(FlexAlign)`
     cursor: pointer;
 
     background: #fff;
@@ -166,7 +166,7 @@ const S = {
     background: linear-gradient(109deg, #ffb334 23.92%, #eb4335 76.3%);
   `,
 
-  GraphFront: styled(FlexBoxAlignCenter)`
+  GraphFront: styled(FlexAlign)`
     position: relative;
     justify-content: flex-end;
 
@@ -187,7 +187,7 @@ const S = {
     line-height: 16px;
   `,
 
-  IconGoodBox: styled(FlexBoxCenter)`
+  IconGoodBox: styled(FlexCenter)`
     margin-right: 4px;
   `,
 

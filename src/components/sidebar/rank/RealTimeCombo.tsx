@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAtom } from 'jotai';
-import { Post } from 'src/types/types';
+import { Post } from 'src/types/common';
 import { postsAtom, likesAtom } from '../FetchPosts';
 import { S } from './StyledRealTimeCombo';
 

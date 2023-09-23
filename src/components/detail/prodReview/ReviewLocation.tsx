@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import { IconAllReview } from 'src/components/icons';
 import { toast } from 'react-toastify';
 import { CardSwiper } from 'react-card-rotate-swiper';
-import { ERROR_IMG } from 'src/utility/guide';
+import { IMAGE_ERROR } from 'src/utility/message';
 
 const ReviewLocation = () => {
   const userId = useLoginUserId();
@@ -84,7 +84,7 @@ const ReviewLocation = () => {
               <S.ProductWrap>
                 <S.productInner>
                   <p>
-                    <img src={product?.prodImg} alt="상품 사진 없음" onError={ERROR_IMG} draggable="false" />
+                    <img src={product?.prodImg} alt="상품 사진 없음" onError={IMAGE_ERROR} draggable="false" />
                   </p>
                   <S.blurWrap>
                     <div className="textBlur">
@@ -105,7 +105,7 @@ const ReviewLocation = () => {
                     contents={
                       <div className="cardWrap">
                         <div>
-                          <img src={product?.prodImg} alt="상품 사진 없음" onError={ERROR_IMG} draggable="false" />
+                          <img src={product?.prodImg} alt="상품 사진 없음" onError={IMAGE_ERROR} draggable="false" />
                         </div>
                         <h3 className="text">{product?.prodName}</h3>
                       </div>

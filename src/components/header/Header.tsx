@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 import TopBarMenuContainer from './TopBarMenuContainer';
 import BoardSearchContainer from './BoardSearchContainer';
 import { IconLogoSymbolH22, IconWaterMarkH22 } from '../icons';
-import { FlexBoxAlignCenter } from 'src/styles/styleBox';
+import { FlexAlign } from 'src/styles/styleFlex';
 import Confirm from '../popUp/Confirm';
 import UserDeleteAlert from '../popUp/UserDeleteAlert';
 
@@ -64,13 +64,13 @@ const S = {
     top: 0;
     background-color: white;
   `,
-  UpperContainer: styled(FlexBoxAlignCenter)`
+  UpperContainer: styled(FlexAlign)`
     width: 1280px;
     height: 56px;
     margin: 0 auto;
     position: relative;
   `,
-  LowerContainer: styled(FlexBoxAlignCenter)`
+  LowerContainer: styled(FlexAlign)`
     width: 1280px;
     height: 50px;
     margin: 0 auto;

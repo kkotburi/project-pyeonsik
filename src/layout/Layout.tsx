@@ -3,7 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Header from '../components/header/Header';
 import SideBar from 'src/components/sidebar/SideBar';
 import styled, { css } from 'styled-components';
-import { FlexBoxCenter, FlexBoxColum } from 'src/styles/styleBox';
+import { FlexCenter, FlexColumn } from 'src/styles/styleFlex';
 import { IconTopButton } from 'src/components/icons';
 
 const Layout = () => {
@@ -109,7 +109,7 @@ const S = {
     height: 10px;
   `,
 
-  TopButton: styled(FlexBoxColum)`
+  TopButton: styled(FlexColumn)`
     cursor: pointer;
     position: fixed;
     z-index: 999;

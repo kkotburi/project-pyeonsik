@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { TextAreaInputProps } from 'src/types/types';
+import { TextAreaInputProps } from 'src/types/common';
 
 const PostWriteBodyInput = forwardRef<HTMLTextAreaElement, TextAreaInputProps>(
   ({ name, id = name, title, value, onChange, autoFocus }, ref) => {

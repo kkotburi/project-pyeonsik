@@ -1,12 +1,12 @@
 import React, { useMemo, useRef } from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { useLocation } from 'react-router';
-import { Post } from 'src/types/types';
+import { Post } from 'src/types/common';
 import { useInView } from 'react-intersection-observer';
 import { styled } from 'styled-components';
 import PostCards from '../renderPosts/PostCards';
 import { getPosts } from 'src/api/mainPage/getPostInfinity';
-import { InfinityPostList } from 'src/types/types';
+import { InfinityPostList } from 'src/types/common';
 
 const PostList = () => {
   const location = useLocation();

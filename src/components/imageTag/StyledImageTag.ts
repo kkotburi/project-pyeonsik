@@ -1,19 +1,19 @@
 import styled from 'styled-components';
-import { FlexBox, FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 
 export const S = {
   BubbleContainer: styled.div`
     margin-top: 96px;
   `,
-  BubbleTail: styled(FlexBox)`
+  BubbleTail: styled(Flex)`
     width: 14px;
     height: 14px;
     transform: rotate(45deg);
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(25px);
   `,
-  BubbleTailFalse: styled(FlexBox)`
+  BubbleTailFalse: styled(Flex)`
     z-index: 2;
     background: #fff;
 
@@ -22,7 +22,7 @@ export const S = {
     height: 13px;
     transform: rotate(45deg);
   `,
-  BubbleBox: styled(FlexBoxCenter)`
+  BubbleBox: styled(FlexCenter)`
     z-index: 1;
 
     margin-top: -7.9px;
@@ -42,14 +42,14 @@ export const S = {
     line-height: 20px;
   `,
 
-  ImageTagContainer: styled(FlexBox)`
+  ImageTagContainer: styled(Flex)`
     position: relative;
     margin-right: 12px;
     padding-bottom: 20px;
     margin-bottom: 20px;
   `,
 
-  AddTagButton: styled(FlexBoxCenter)`
+  AddTagButton: styled(FlexCenter)`
     cursor: pointer;
 
     &:hover .dropDownLink {
@@ -88,7 +88,7 @@ export const S = {
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
   `,
-  IconBox: styled(FlexBoxCenter)`
+  IconBox: styled(FlexCenter)`
     width: 20px;
     height: 20px;
     background: var(--neutral-200, #e4e7ec);
@@ -113,7 +113,7 @@ export const S = {
     height: 80px;
   `,
 
-  TagContainer: styled(FlexBoxAlignCenter)`
+  TagContainer: styled(FlexAlign)`
     width: 356px;
     height: 100px;
     background-size: 30px;
@@ -122,7 +122,7 @@ export const S = {
     height: 20px;
   `,
 
-  TagDataContainer: styled(FlexBox)<{ searchFormHandler: boolean }>`
+  TagDataContainer: styled(Flex)<{ searchFormHandler: boolean }>`
     margin-top: 150px;
     z-index: 2;
     position: absolute;
@@ -135,7 +135,7 @@ export const S = {
     border-radius: 10px;
   `,
 
-  DataContainer: styled(FlexBox)`
+  DataContainer: styled(Flex)`
     margin-top: 25px;
     flex-direction: column;
   `,
@@ -191,7 +191,7 @@ export const S = {
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
   `,
 
-  DeleteIconContainer: styled(FlexBoxAlignCenter)`
+  DeleteIconContainer: styled(FlexAlign)`
     width: 40px;
     margin-left: 210px;
     font-family: pretendard;
@@ -200,10 +200,10 @@ export const S = {
     color: #98a2b3;
   `,
 
-  TagIconContainer: styled(FlexBoxCenter)`
+  TagIconContainer: styled(FlexCenter)`
     position: relative;
   `,
-  TagIconBox: styled(FlexBoxCenter)`
+  TagIconBox: styled(FlexCenter)`
     cursor: pointer;
 
     width: 40px;
@@ -218,7 +218,7 @@ export const S = {
     left: -20px;
   `,
 
-  ModalContainer: styled(FlexBoxCenter)`
+  ModalContainer: styled(FlexCenter)`
     position: absolute;
     color: #242424;
     width: 195px;

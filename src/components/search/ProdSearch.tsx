@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getSearchProd } from 'src/api/product';
 import { useInView } from 'react-intersection-observer';
-import { InfinityProductList, Product } from 'src/types/types';
+import { InfinityProductList, Product } from 'src/types/common';
 import ProdCard from '../eventProd/ProdCard';
-import { FlexBoxCenter } from 'src/styles/styleBox';
+import { FlexCenter } from 'src/styles/styleFlex';
 import { brands } from '../sidebar/event/BrandSelector';
 import { setBrandName } from 'src/function/setBrandName';
 import { toast } from 'react-toastify';
@@ -119,7 +119,7 @@ interface FilterProps {
 }
 
 const S = {
-  BrandSelect: styled(FlexBoxCenter)<FilterProps>`
+  BrandSelect: styled(FlexCenter)<FilterProps>`
     cursor: pointer;
     width: 68px;
     color: ${(props) => {

@@ -4,7 +4,7 @@ import { updateBugBadge, updateSheriffBadge } from 'src/api/badge';
 import useLoginUserId from 'src/hooks/useLoginUserId';
 import supabase from 'src/lib/supabaseClient';
 import { v4 as uuidv4 } from 'uuid';
-import { EMAIL_CHECK } from 'src/utility/guide';
+import { EMAIL_CHECK } from 'src/utility/message';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
 
@@ -32,7 +32,7 @@ const Report = () => {
   const userId = useLoginUserId();
   const navigate = useNavigate();
 
-  const isStep1Complete = userId ? selectedInquiry1 !== '' : (email.trim() !== '' && selectedInquiry1 !== '');
+  const isStep1Complete = userId ? selectedInquiry1 !== '' : email.trim() !== '' && selectedInquiry1 !== '';
   const isStep2Complete = selectedInquiry2 !== '';
   const isStep3Complete = imageName !== '' && (urlLink.trim() !== '' || message.trim() !== '');
 

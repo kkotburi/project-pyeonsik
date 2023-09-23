@@ -5,8 +5,8 @@ import useLoginUserId from 'src/hooks/useLoginUserId';
 import useCommentMutate from 'src/hooks/useCommentMutate';
 import styled from 'styled-components';
 import { IconCommentInput } from 'src/components/icons';
-import { EMAIL_CHECK } from 'src/utility/guide';
-import { FlexBox, FlexBoxAlignCenter } from 'src/styles/styleBox';
+import { EMAIL_CHECK } from 'src/utility/message';
+import { Flex, FlexAlign } from 'src/styles/styleFlex';
 import { updateFirstCommentBadge } from 'src/api/badge';
 import { toast } from 'react-toastify';
 
@@ -79,7 +79,7 @@ const CommentInput = ({ type, commentId, prevComment, setIsEditComment }: Props)
 export default CommentInput;
 
 const S = {
-  CommentInputArea: styled(FlexBox)`
+  CommentInputArea: styled(Flex)`
     gap: 8px;
   `,
   CommentInPutProfile: styled.div`
@@ -88,7 +88,7 @@ const S = {
     border-radius: 100px;
     background: lightgray;
   `,
-  CommentInputForm: styled(FlexBoxAlignCenter)`
+  CommentInputForm: styled(FlexAlign)`
     width: 100%;
     background: var(--neutral-100, #f2f4f7);
     border-radius: 10px;

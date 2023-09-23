@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexBox, FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 
 export const S = {
@@ -23,7 +23,7 @@ export const S = {
     position: absolute;
     left: -20px;
   `,
-  TagIconContainer: styled(FlexBoxCenter)`
+  TagIconContainer: styled(FlexCenter)`
     cursor: pointer;
 
     width: 40px;
@@ -52,7 +52,7 @@ export const S = {
     transform: rotate(45deg);
     background: #fff;
   `,
-  TagDataContainer: styled(FlexBoxAlignCenter)`
+  TagDataContainer: styled(FlexAlign)`
     position: absolute;
     margin: -7.9px 0px 0px -158px;
     width: 356px;
@@ -94,7 +94,7 @@ export const S = {
     ${styleFont.labelLarge}
   `,
 
-  ProductWrapper: styled(FlexBoxCenter)`
+  ProductWrapper: styled(FlexCenter)`
     width: 200px;
     height: 200px;
     padding: 14px;
@@ -106,7 +106,7 @@ export const S = {
   ProductImage: styled.img`
     object-fit: contain;
   `,
-  ProdDataOverlay: styled(FlexBoxCenter)`
+  ProdDataOverlay: styled(FlexCenter)`
     position: absolute;
 
     width: 200px;

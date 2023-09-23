@@ -6,10 +6,10 @@ import TermsAndConditions from './TermsAndConditions';
 import { useAtom } from 'jotai';
 import { toast } from 'react-toastify';
 import { styleFont } from 'src/styles/styleFont';
-import { FlexBox, FlexBoxAlignCenter, FlexBoxCenter, FlexBoxJustifyCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign, FlexCenter, FlexJustify } from 'src/styles/styleFlex';
 import OAuthLogin from '../OAuthLogin';
 import { IconWarning } from '../icons';
-import { ERROR_AUTH } from 'src/utility/guide';
+import { AUTH_ERROR } from 'src/utility/message';
 import useLoginUserId from 'src/hooks/useLoginUserId';
 
 interface Props {
@@ -146,7 +146,7 @@ const SignUpForm = ({ setNextStep, setUserEmail }: Props) => {
 export default SignUpForm;
 
 const S = {
-  Container: styled(FlexBoxAlignCenter)`
+  Container: styled(FlexAlign)`
     width: 490px;
     background: #fff;
     border-radius: 10px;
@@ -160,7 +160,7 @@ const S = {
     margin-bottom: 30px;
     ${styleFont.titleLarge}
   `,
-  InputArea: styled(FlexBoxAlignCenter)``,
+  InputArea: styled(FlexAlign)``,
   Input: styled.input`
     outline: none;
     width: 294px;
@@ -180,7 +180,7 @@ const S = {
       border: 1px solid var(--neutral-500, #667085);
     }
   `,
-  SubmitDisable: styled(FlexBoxCenter)`
+  SubmitDisable: styled(FlexCenter)`
     cursor: pointer;
     margin-top: 38px;
     width: 294px;
@@ -191,7 +191,7 @@ const S = {
     text-align: center;
     ${styleFont.buttonSmall}
   `,
-  Submit: styled(FlexBoxCenter)`
+  Submit: styled(FlexCenter)`
     cursor: pointer;
     margin-top: 38px;
     width: 294px;
@@ -233,7 +233,7 @@ const S = {
     margin-top: 10px;
     ${styleFont.bodyMedium}
   `,
-  Error: styled(FlexBox)`
+  Error: styled(Flex)`
     margin-right: auto;
     color: #ff7474;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Post } from 'src/types/types';
+import { Post } from 'src/types/common';
 
 const WriterInfo = (post: Post) => {
   const postWriter = post?.userId;

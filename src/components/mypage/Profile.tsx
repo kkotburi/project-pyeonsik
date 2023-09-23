@@ -6,20 +6,20 @@ import useLoginUserId from 'src/hooks/useLoginUserId';
 import supabase from 'src/lib/supabaseClient';
 import { styled } from 'styled-components';
 import { IconCamera, IconSecret } from '../icons';
-import { FlexBox, FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import useUserMutate from 'src/hooks/useUserMutate';
 import UserDelete from '../register/UserDelete';
 import { toast } from 'react-toastify';
 import {
-  CORRECT_NICK_MESSAGES,
-  MAX_NICKNAME_LENGTH,
+  NICKNAME_CORRECT,
+  NICKNAME_MAX,
   NICKNAME_ALREADY,
   NICKNAME_DIGITS,
   NICKNAME_FORM,
   NICKNAME_SLANG,
-  SERVICE_PREPARING
-} from 'src/utility/guide';
+  PREPARING_SERVICE
+} from 'src/utility/message';
 import { debounce } from 'lodash';
 
 const Profile = () => {
@@ -102,8 +102,8 @@ const Profile = () => {
       setSuccessMessage('편식에서만의 닉네임을 사용해 보세요!');
       return;
     } else {
-      const randomIndex = Math.floor(Math.random() * CORRECT_NICK_MESSAGES.length);
-      const randomMessage = CORRECT_NICK_MESSAGES[randomIndex];
+      const randomIndex = Math.floor(Math.random() * NICKNAME_CORRECT.length);
+      const randomMessage = NICKNAME_CORRECT[randomIndex];
       setSuccessMessage(randomMessage);
     }
 
@@ -131,7 +131,7 @@ const Profile = () => {
       setNameLimitColor('black');
       return;
     }
-    if (nickname.length < MAX_NICKNAME_LENGTH) {
+    if (nickname.length < NICKNAME_MAX) {
       setNameLimitColor('blue');
     } else setNameLimitColor('red');
   }, [nickname]);
@@ -147,7 +147,7 @@ const Profile = () => {
   }
 
   const handleDebounce = debounce((nickname: string) => {
-    if (nickname.length > MAX_NICKNAME_LENGTH) setNickname((prevNickname) => prevNickname.slice(0, -1));
+    if (nickname.length > NICKNAME_MAX) setNickname((prevNickname) => prevNickname.slice(0, -1));
   }, 10);
 
   return (
@@ -180,14 +180,14 @@ const Profile = () => {
           <S.NicknameInputBox>
             <S.InputArea
               type="text"
-              maxLength={MAX_NICKNAME_LENGTH}
+              maxLength={NICKNAME_MAX}
               value={nickname || ''}
               onChange={(e) => {
                 setNickname(e.target.value);
               }}
             ></S.InputArea>
             <S.InputLimtArea color={nameLimitColor}>
-              {nickname.length}/{MAX_NICKNAME_LENGTH}
+              {nickname.length}/{NICKNAME_MAX}
             </S.InputLimtArea>
             <S.InfoSubmitButton onClick={updateNickname}>변경</S.InfoSubmitButton>
           </S.NicknameInputBox>
@@ -207,7 +207,7 @@ const Profile = () => {
           <S.InfoCaption>비밀번호 변경</S.InfoCaption>
           <S.NicknameInputBox>
             <IconSecret />
-            {SERVICE_PREPARING}
+            {PREPARING_SERVICE}
             <S.InfoSubmitButton>변경</S.InfoSubmitButton>
           </S.NicknameInputBox>
         </S.InputWrapper>
@@ -224,7 +224,7 @@ interface ProfileImgProps {
 }
 
 const S = {
-  Container: styled(FlexBoxCenter)`
+  Container: styled(FlexCenter)`
     width: 100%;
     height: 660px;
     flex-direction: column;
@@ -235,7 +235,7 @@ const S = {
   ProfileChange: styled.input`
     visibility: hidden;
   `,
-  ProfileChangeButton: styled(FlexBoxCenter)`
+  ProfileChangeButton: styled(FlexCenter)`
     cursor: pointer;
 
     width: 42px;
@@ -253,7 +253,7 @@ const S = {
     margin-bottom: 6px;
     position: relative;
   `,
-  ProfileImgArea: styled(FlexBoxCenter)<ProfileImgProps>`
+  ProfileImgArea: styled(FlexCenter)<ProfileImgProps>`
     width: 130px;
     height: 130px;
     border-radius: 100px;
@@ -268,7 +268,7 @@ const S = {
     display: flex;
     flex-direction: row;
   `,
-  InfoInputBox: styled(FlexBoxAlignCenter)`
+  InfoInputBox: styled(FlexAlign)`
     width: 350px;
     margin-top: 4px;
     padding: 8px 8px 8px 12px;
@@ -298,7 +298,7 @@ const S = {
     margin-right: 0.4px;
     font-size: 12px;
   `,
-  InfoSubmitButton: styled(FlexBox)`
+  InfoSubmitButton: styled(Flex)`
     cursor: pointer;
 
     margin-left: auto;
@@ -315,7 +315,7 @@ const S = {
     font-weight: 600;
     line-height: 16px;
   `,
-  NicknameInputBox: styled(FlexBoxAlignCenter)`
+  NicknameInputBox: styled(FlexAlign)`
     width: 350px;
     margin-top: 4px;
     padding: 8px 8px 8px 12px;

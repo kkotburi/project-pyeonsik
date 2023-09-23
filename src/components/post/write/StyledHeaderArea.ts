@@ -1,4 +1,4 @@
-import { FlexBoxCenter } from 'src/styles/styleBox';
+import { FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import styled from 'styled-components';
 
@@ -34,7 +34,7 @@ export const S = {
     ${styleFont.buttonMedium}
   `,
 
-  IconBox: styled(FlexBoxCenter)``,
+  IconBox: styled(FlexCenter)``,
 
   LogoContainer: styled.div`
     cursor: pointer;

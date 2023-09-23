@@ -5,7 +5,7 @@ import CommentUserInfo from './CommentUserInfo';
 import ReCommentLikes from './ReCommentLikes';
 import ReCommentInput from './ReCommentInput';
 import useReCommentMutate from 'src/hooks/useReCommentMutate';
-import { FlexBox, FlexBoxAlignCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign } from 'src/styles/styleFlex';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 
@@ -81,14 +81,14 @@ export default ReCommentForMap;
 const S = {
   CommentArea: styled.div``,
   UpWrapper: styled.div``,
-  LowWrapper: styled(FlexBox)`
+  LowWrapper: styled(Flex)`
     gap: 4px;
     margin-left: 45px;
   `,
-  ButtonArea: styled(FlexBoxAlignCenter)`
+  ButtonArea: styled(FlexAlign)`
     margin-left: auto;
   `,
-  UserArea: styled(FlexBoxAlignCenter)``,
+  UserArea: styled(FlexAlign)``,
   ProfileImg: styled.img`
     width: 36px;
     height: 36px;

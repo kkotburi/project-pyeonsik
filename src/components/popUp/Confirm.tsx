@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { confirmAlert, ReactConfirmAlertProps } from 'react-confirm-alert';
-import { FlexBox, FlexBoxCenter } from 'src/styles/styleBox';
+import { Flex, FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import { confirmModalText } from './confirmModalText';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -63,7 +63,7 @@ const Confirm = (type: string) => {
 };
 
 export default Confirm;
-const ButtonBasic = styled(FlexBoxCenter)`
+const ButtonBasic = styled(FlexCenter)`
   width: 122px;
   height: 36px;
   border-radius: 6px;
@@ -93,7 +93,7 @@ const S = {
     backdrop-filter: blur(10px);
     z-index: 101;
   `,
-  ConfirmBox: styled(FlexBoxCenter)`
+  ConfirmBox: styled(FlexCenter)`
     width: 400px;
     height: 274px;
     border-radius: 10px;
@@ -120,7 +120,7 @@ const S = {
     white-space: pre-line;
     ${styleFont.bodyLarge};
   `,
-  ButtonArea: styled(FlexBox)``,
+  ButtonArea: styled(Flex)``,
   TrueButton: styled(ButtonBasic)<ButtonProps>`
     background: var(--main, #f02826);
     color: #fff;

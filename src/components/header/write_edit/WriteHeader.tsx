@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as Add } from 'src/components/post/svg/Add.svg';
-import { FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 
 const WriteHeader = () => {
   return (
@@ -19,12 +19,12 @@ const WriteHeader = () => {
 export default WriteHeader;
 
 const S = {
-  TopBarMenuContainer: styled(FlexBoxAlignCenter)`
+  TopBarMenuContainer: styled(FlexAlign)`
     gap: 24px;
     position: absolute;
     right: 16px;
   `,
-  AddButton: styled(FlexBoxCenter)`
+  AddButton: styled(FlexCenter)`
     background: #d9d9d9;
 
     width: 110px;

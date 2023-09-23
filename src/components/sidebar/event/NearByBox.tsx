@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FlexBoxCenter, FlexBoxAlignCenter } from 'src/styles/styleBox';
+import { FlexCenter, FlexAlign } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
-import { ConvsInform } from 'src/types/types';
+import { ConvsInform } from 'src/types/common';
 import { Link } from 'react-router-dom';
 import { IconAdd, IconLocation, IconMap, IconOrgPost, IconQuotation } from 'src/components/icons';
 
@@ -50,12 +50,12 @@ interface ColorProps {
 }
 
 const S = {
-  StoreContainer: styled(FlexBoxAlignCenter)`
+  StoreContainer: styled(FlexAlign)`
     width: 280px;
     height: 60px;
     position: relative;
   `,
-  StoreNameDot: styled(FlexBoxCenter)`
+  StoreNameDot: styled(FlexCenter)`
     color: var(--font-black, var(--Black, #242424));
     ${styleFont.bodyLarge}
   `,
@@ -79,14 +79,14 @@ const S = {
       }
     }};
   `,
-  LeftBox: styled(FlexBoxAlignCenter)`
+  LeftBox: styled(FlexAlign)`
     padding: 18px 0 18px 16px;
   `,
   RightBox: styled.div`
     position: absolute;
     left: 130px;
   `,
-  StoreLocationDistanceBox: styled(FlexBoxCenter)``,
+  StoreLocationDistanceBox: styled(FlexCenter)``,
 
   StoreLocation: styled(Link)`
     display: flex;
@@ -109,7 +109,7 @@ const S = {
     font-weight: 600;
     line-height: 16px;
   `,
-  IconBox: styled(FlexBoxCenter)`
+  IconBox: styled(FlexCenter)`
     margin-right: 2px;
   `,
   StoreDistance: styled.div`

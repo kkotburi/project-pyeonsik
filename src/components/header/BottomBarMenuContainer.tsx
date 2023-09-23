@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
-import { FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import styled, { css } from 'styled-components';
 
@@ -62,7 +62,7 @@ type Props = {
 export default BottomBarMenuContainer;
 
 const S = {
-  ButtonArea: styled(FlexBoxCenter)`
+  ButtonArea: styled(FlexCenter)`
     margin-right: 14px;
   `,
   AllButton: styled(Link)<Props>`
@@ -110,17 +110,17 @@ const S = {
       transition: 0.5s;
     }
   `,
-  QuickButtonArea: styled(FlexBoxAlignCenter)`
+  QuickButtonArea: styled(FlexAlign)`
     gap: 8px;
   `,
-  QuickPostButton: styled(FlexBoxAlignCenter)`
+  QuickPostButton: styled(FlexAlign)`
     border-radius: 100px;
     background-color: #f5f5f5;
     padding: 3px 18px;
     height: 34px;
   `,
   SearchCategoryArea: styled.div``,
-  SearchCategory: styled(FlexBoxCenter)`
+  SearchCategory: styled(FlexCenter)`
     height: 34px;
     padding: 0 18px;
     padding-top: 2px;

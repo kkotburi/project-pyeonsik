@@ -8,7 +8,7 @@ import { IconBadge, IconCommon, IconRecipe } from 'src/components/icons';
 import { styleFont } from 'src/styles/styleFont';
 import UserLevel from 'src/components/header/UserLevel';
 import supabase from 'src/lib/supabaseClient';
-import { FlexBox } from 'src/styles/styleBox';
+import { Flex } from 'src/styles/styleFlex';
 import ProgressCircle from 'src/components/ProgressCircle';
 
 const getUserIdBadgeCount = async (userId: string) => {
@@ -157,7 +157,7 @@ const S = {
     background-position: center;
   `,
 
-  DetailArea: styled(FlexBox)`
+  DetailArea: styled(Flex)`
     flex-direction: column;
     align-items: flex-start;
   `,

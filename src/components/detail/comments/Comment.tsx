@@ -5,7 +5,7 @@ import { useQueries, useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
 import CommentForMap from './CommentForMap';
 import CommentInput from './CommentInput';
-import { FlexBox } from 'src/styles/styleBox';
+import { Flex } from 'src/styles/styleFlex';
 import { getUserData } from 'src/api/userLogin';
 import useLoginUserId from 'src/hooks/useLoginUserId';
 import ProgressCircle from 'src/components/ProgressCircle';
@@ -82,7 +82,7 @@ const S = {
     width: 100%;
     background-color: white;
   `,
-  CommentInputArea: styled(FlexBox)`
+  CommentInputArea: styled(Flex)`
     gap: 8px;
     margin-bottom: 30px;
   `,
@@ -110,7 +110,7 @@ const S = {
     font-weight: 400;
     line-height: 20px;
   `,
-  CommentRenderArea: styled(FlexBox)`
+  CommentRenderArea: styled(Flex)`
     margin-top: 30px;
     flex-direction: column;
     gap: 24px;

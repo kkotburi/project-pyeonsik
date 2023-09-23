@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 import { CU, Emart24, GS25, SevenEleven } from 'src/components/icons';
 import { styleFont } from 'src/styles/styleFont';
-import { FlexBoxAlignCenter } from 'src/styles/styleBox';
+import { FlexAlign } from 'src/styles/styleFlex';
 
 export const brands = [
   {
@@ -65,7 +65,7 @@ const S = {
     padding: 8px 10px;
   `,
 
-  Icon: styled(FlexBoxAlignCenter)`
+  Icon: styled(FlexAlign)`
     padding: 10px 0;
     margin-right: 4px;
   `,

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { Post } from 'src/types/types';
+import { Post } from 'src/types/common';
 import { useLocation, useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import WriterContainer from './reactionSource/WriterContainer';

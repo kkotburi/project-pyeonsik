@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { FlexBox, FlexBoxCenter } from 'src/styles/styleBox';
+import { Flex, FlexCenter } from 'src/styles/styleFlex';
 
-export const ArrowIconWrapper = styled(FlexBoxCenter)`
+export const ArrowIconWrapper = styled(FlexCenter)`
   position: absolute;
   top: 70%;
   left: 26.3px;
@@ -13,7 +13,7 @@ export const ArrowIconWrapper = styled(FlexBoxCenter)`
   margin-top: 1.6px;
 `;
 
-export const DocIconWrapper = styled(FlexBoxCenter)`
+export const DocIconWrapper = styled(FlexCenter)`
   position: absolute;
   top: 70%;
   left: -24px;
@@ -23,7 +23,7 @@ export const DocIconWrapper = styled(FlexBoxCenter)`
 `;
 
 export const S = {
-  ButtonThumbnailArea: styled(FlexBox)`
+  ButtonThumbnailArea: styled(Flex)`
     width: 48px;
     position: fixed;
     left: calc((100vw - 1280px) / 2 + 93px);
@@ -32,7 +32,7 @@ export const S = {
     gap: 8px;
   `,
 
-  SmallButton: styled(FlexBoxCenter)`
+  SmallButton: styled(FlexCenter)`
     margin-left: -24px;
     margin-top: 11px;
     width: 100px;
@@ -68,7 +68,7 @@ export const S = {
     }
   `,
 
-  Contents: styled(FlexBox)`
+  Contents: styled(Flex)`
     position: relative;
   `,
   ContentArea: styled.div``,
@@ -93,7 +93,7 @@ export const S = {
     z-index: -1;
   `,
 
-  ModalOverlay: styled(FlexBoxCenter)`
+  ModalOverlay: styled(FlexCenter)`
     background-color: #242424;
     border-radius: 5px;
     position: absolute;
@@ -106,7 +106,7 @@ export const S = {
 
   ModalContainer: styled.div``,
 
-  ModalContent: styled(FlexBoxCenter)`
+  ModalContent: styled(FlexCenter)`
     color: #ffffff;
     font-family: Pretendard;
     font-style: normal;

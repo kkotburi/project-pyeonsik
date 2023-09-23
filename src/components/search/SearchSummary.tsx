@@ -7,7 +7,7 @@ import { getPostByKeyword, getPostByKeywordSummary } from 'src/api/posts';
 import { getSearchProdSummary } from 'src/api/product';
 import { setBrandName } from 'src/function/setBrandName';
 import { searchBar, searchKeyWord } from 'src/globalState/jotai';
-import { Post, Product } from 'src/types/types';
+import { Post, Product } from 'src/types/common';
 import styled from 'styled-components';
 
 const SearchSummary = () => {

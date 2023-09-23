@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Post } from 'src/types/types';
+import { Post } from 'src/types/common';
 import { styled } from 'styled-components';
 import PostForMain from './PostForMain';
 import { useLocation } from 'react-router';

@@ -1,5 +1,5 @@
 import supabase from 'src/lib/supabaseClient';
-import { InfinityProductList, Product } from 'src/types/types';
+import { InfinityProductList, Product } from 'src/types/common';
 
 const getEventProd = async (pageParam: number = 0, brandParam: string): Promise<InfinityProductList> => {
   let response;

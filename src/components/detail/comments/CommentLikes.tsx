@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { IconLiked, IconUnLiked } from 'src/components/icons';
 import supabase from 'src/lib/supabaseClient';
 import { useLocation, useNavigate, useParams } from 'react-router';
-import { EMAIL_CHECK } from 'src/utility/guide';
+import { EMAIL_CHECK } from 'src/utility/message';
 import { toast } from 'react-toastify';
 import ProgressCircle from 'src/components/ProgressCircle';
 

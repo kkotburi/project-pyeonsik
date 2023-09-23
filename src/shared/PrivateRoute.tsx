@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router';
 import { toast } from 'react-toastify';
-import { EMAIL_CHECK } from 'src/utility/guide';
+import { EMAIL_CHECK } from 'src/utility/message';
 
-export const PrivateRoute = () => {
+const PrivateRoute = () => {
   const token = localStorage.getItem('sb-wwkfivwrtwucsiwsnisz-auth-token');
 
   const tokenCheck = (token: string | null) => {
@@ -17,3 +17,5 @@ export const PrivateRoute = () => {
 
   return tokenCheck(token) ? <Outlet /> : <Navigate to="/" />;
 };
+
+export default PrivateRoute;

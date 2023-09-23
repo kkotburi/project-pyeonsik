@@ -1,9 +1,9 @@
 import React from 'react';
 import useLoginUserId from 'src/hooks/useLoginUserId';
-import { Swiper } from 'src/types/types';
+import { Swiper } from 'src/types/common';
 import { IconBadFace, IconGoodFace } from 'src/components/icons';
 import { styled } from 'styled-components';
-import { FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 
 export interface MyeEvaluationProps {
   swipers: Swiper[];
@@ -31,7 +31,7 @@ const MyEvaluation = ({ swipers, prodId }: MyeEvaluationProps) => {
 export default MyEvaluation;
 
 const S = {
-  MyEvaluationArea: styled(FlexBoxCenter)`
+  MyEvaluationArea: styled(FlexCenter)`
     gap: 4px;
   `,
 
@@ -40,7 +40,7 @@ const S = {
     height: 16px;
   `,
 
-  MyText: styled(FlexBoxAlignCenter)`
+  MyText: styled(FlexAlign)`
     color: var(--neutral-500, #667085);
 
     font-family: Pretendard;

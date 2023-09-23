@@ -8,7 +8,7 @@ import HeaderArea from './write/HeaderArea';
 
 import supabase from 'src/lib/supabaseClient';
 import { useAtom } from 'jotai';
-import { Tag } from 'src/types/types';
+import { Tag } from 'src/types/common';
 import { contentsAtom, tagsDataAtom, imagesAtom } from '../imageTag/AddImageTagComponent';
 import AddImageTagComponent from '../imageTag/AddImageTagComponent';
 import { S } from 'src/components/post/write/StyledPostWrite';

@@ -5,8 +5,8 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { getEventProd } from 'src/api/product';
 import { useLocation } from 'react-router';
 import { useInView } from 'react-intersection-observer';
-import { InfinityProductList } from 'src/types/types';
-import { FlexBoxAlignCenter } from 'src/styles/styleBox';
+import { InfinityProductList } from 'src/types/common';
+import { FlexAlign } from 'src/styles/styleFlex';
 import ProdSkeleton from '../skeleton/ProdSkeleton';
 
 const ProdList = () => {
@@ -74,7 +74,7 @@ const ProdList = () => {
 export default ProdList;
 
 const S = {
-  Container: styled(FlexBoxAlignCenter)`
+  Container: styled(FlexAlign)`
     width: 100%;
     align-content: center;
     gap: 30px;

@@ -2,7 +2,7 @@ import { useAtom } from 'jotai';
 import React, { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { searchBar, searchKeyWord } from 'src/globalState/jotai';
-import { FlexBoxAlignCenter } from 'src/styles/styleBox';
+import { FlexAlign } from 'src/styles/styleFlex';
 import { debounce } from 'lodash';
 import _ from 'lodash';
 import styled, { css } from 'styled-components';
@@ -81,7 +81,7 @@ interface AreaProps {
 }
 
 const S = {
-  Area: styled(FlexBoxAlignCenter)<AreaProps>`
+  Area: styled(FlexAlign)<AreaProps>`
     height: 34px;
     background: #f4f4f4;
     border-radius: 8px;

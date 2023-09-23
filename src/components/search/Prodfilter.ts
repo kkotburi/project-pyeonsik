@@ -1,4 +1,4 @@
-import { Product } from 'src/types/types';
+import { Product } from 'src/types/common';
 
 export const ButtonFilter = (list: Product[], eventFilter: boolean, brandFilter: string) => {
   let filteredData: Product[];

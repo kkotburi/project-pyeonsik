@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlexBoxCenter } from 'src/styles/styleBox';
+import { FlexCenter } from 'src/styles/styleFlex';
 import styled from 'styled-components';
 import { IconReport } from '../icons';
 import { useNavigate } from 'react-router';
@@ -24,7 +24,7 @@ const ReportIcon = () => {
 export default ReportIcon;
 
 const S = {
-  Container: styled(FlexBoxCenter)`
+  Container: styled(FlexCenter)`
     cursor: pointer;
 
     width: 74px;

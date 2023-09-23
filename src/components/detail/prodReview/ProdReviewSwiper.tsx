@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from 'react-router';
 import { debounce } from 'lodash';
 import { getProdData, getReviewedProductData, getSwiperData } from 'src/api/ReviewSwiper';
 import { CardSwiper } from 'react-card-rotate-swiper';
-import { ERROR_IMG } from 'src/utility/guide';
+import { IMAGE_ERROR } from 'src/utility/message';
 
 const ProdReviewSwiper = () => {
   const [step, setStep] = useState(0);
@@ -20,16 +20,15 @@ const ProdReviewSwiper = () => {
 
   const { data: prodData } = useQuery(['products'], getProdData);
 
+  // const {data : filteredData} = useQuery(['filteredProducts',userId],()=>getReviewedProductData(userId))
 
-// const {data : filteredData} = useQuery(['filteredProducts',userId],()=>getReviewedProductData(userId))
+  const filterprodData = prodData?.filter((prod) => {
+    return !swiperData?.data?.some((swiperProd) => {
+      return prod.id === swiperProd.prodId && swiperProd.userId === userId;
+    });
+  });
 
-const filterprodData = prodData?.filter((prod) => {
-      return !swiperData?.data?.some((swiperProd) => {
-        return prod.id === swiperProd.prodId && swiperProd.userId === userId;
-      });
-     });
-
-// console.log(filteredData,"필터드데디틍ㅇㅇㅇㅇㅇㅇ")
+  // console.log(filteredData,"필터드데디틍ㅇㅇㅇㅇㅇㅇ")
 
   useEffect(() => {
     // if (swiperData && prodData) {
@@ -49,7 +48,6 @@ const filterprodData = prodData?.filter((prod) => {
 
   console.log(data);
 
-
   const onDropToLike = async (id: string) => {
     const addReview = {
       prodId: id,
@@ -61,7 +59,7 @@ const filterprodData = prodData?.filter((prod) => {
     // setData(newData);
 
     await supabase.from('swiper').insert([addReview]);
-    setStep((pstep)=> pstep+1)
+    setStep((pstep) => pstep + 1);
   };
 
   const onDropToDisLike = async (id: string) => {
@@ -75,7 +73,7 @@ const filterprodData = prodData?.filter((prod) => {
     // setData(newData);
 
     await supabase.from('swiper').insert([addReview]);
-    setStep((pstep)=> pstep+1)
+    setStep((pstep) => pstep + 1);
   };
 
   const cardsSwipe = (dir: any, id: string) => {
@@ -93,8 +91,7 @@ const filterprodData = prodData?.filter((prod) => {
     // console.log(slice, '마지막을 제외한 뎅;터ㅏ');
     // setData([last, ...slice]);
     // console.log([last, ...slice], 'datadaaaa');
-    setStep((pstep)=> pstep+1)
-
+    setStep((pstep) => pstep + 1);
   };
 
   return (
@@ -129,7 +126,7 @@ const filterprodData = prodData?.filter((prod) => {
                           contents={
                             <div className="cardWrap">
                               <div>
-                                <img src={prod.prodImg} alt="상품 사진 없음" onError={ERROR_IMG} draggable="false" />
+                                <img src={prod.prodImg} alt="상품 사진 없음" onError={IMAGE_ERROR} draggable="false" />
                               </div>
                               <h3 className="text">{prod.prodName}</h3>
                             </div>
@@ -148,12 +145,12 @@ const filterprodData = prodData?.filter((prod) => {
               </div>
             </S.ReviewDisLike>
           </S.ProdReviewWrap>
-          
-            {step !== filterprodData?.length && (
-              <S.SkipButtonWrap>
-                <S.SkipButton onClick={skip}>SKIP!</S.SkipButton>
-              </S.SkipButtonWrap>
-            )}
+
+          {step !== filterprodData?.length && (
+            <S.SkipButtonWrap>
+              <S.SkipButton onClick={skip}>SKIP!</S.SkipButton>
+            </S.SkipButtonWrap>
+          )}
           <S.AllReviewsWrap onClick={() => navigate('/review_list')}>
             <p>
               <IconAllReview />

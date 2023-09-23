@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import supabase from 'src/lib/supabaseClient';
-import { EditPost, NewPost, NewRecipePost, Post, TagEditPost } from 'src/types/types';
+import { EditPost, NewPost, NewRecipePost, Post, TagEditPost } from 'src/types/common';
 
 const getPost = async (id: string) => {
   const response = await supabase

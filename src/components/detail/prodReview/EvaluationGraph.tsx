@@ -2,7 +2,7 @@ import React from 'react';
 import { MyeEvaluationProps as MyEvaluationProps } from './MyEvaluation';
 import { IconBad, IconGood } from 'src/components/icons';
 import { styled } from 'styled-components';
-import { FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 
 const EvaluationGraph = ({ swipers, prodId, isGood }: MyEvaluationProps) => {
   const prodRate = swipers.filter((swiper) => swiper.prodId === prodId);
@@ -58,7 +58,7 @@ const S = {
     background: ${(props) => props.background};
   `,
 
-  GraphFront: styled(FlexBoxAlignCenter)<{ background: string }>`
+  GraphFront: styled(FlexAlign)<{ background: string }>`
     position: relative;
     justify-content: flex-end;
 
@@ -76,7 +76,7 @@ const S = {
     line-height: 16px;
   `,
 
-  IconGoodBox: styled(FlexBoxCenter)`
+  IconGoodBox: styled(FlexCenter)`
     margin-right: 4px;
 
     svg {

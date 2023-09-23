@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getSwiperData } from 'src/api/ReviewSwiper';
 import styled from 'styled-components';
-import { FlexBoxAlignCenter } from 'src/styles/styleBox';
+import { FlexAlign } from 'src/styles/styleFlex';
 import ProgressCircle from 'src/components/ProgressCircle';
 
 interface EvaluationGoodProps {
@@ -40,12 +40,12 @@ const EvaluationGood = ({ prodId }: EvaluationGoodProps) => {
 export default EvaluationGood;
 
 const S = {
-  GraphContainer: styled(FlexBoxAlignCenter)`
+  GraphContainer: styled(FlexAlign)`
     gap: 6px;
     margin: 0px 2px 0px 4px;
   `,
 
-  GraphFront: styled(FlexBoxAlignCenter)<{ background: string }>`
+  GraphFront: styled(FlexAlign)<{ background: string }>`
     width: 100px;
     height: 8px;
     border-radius: 100px;

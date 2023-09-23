@@ -1,6 +1,6 @@
 import { atom, useAtom } from 'jotai';
 import React, { useState } from 'react';
-import { FlexBox, FlexBoxAlignCenter, FlexBoxJustifyCenter } from 'src/styles/styleBox';
+import { Flex, FlexAlign, FlexJustify } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import styled from 'styled-components';
 import { IconConsent, IconConsentConfirm } from '../icons/register';
@@ -54,11 +54,11 @@ const TermsAndConditions = ({ terms1Agreed, setTerms1Agreed, terms2Agreed, setTe
 export default TermsAndConditions;
 
 const S = {
-  Container: styled(FlexBoxJustifyCenter)`
+  Container: styled(FlexJustify)`
     flex-direction: column;
     margin-top: 44px;
   `,
-  AllCheckArea: styled(FlexBoxAlignCenter)`
+  AllCheckArea: styled(FlexAlign)`
     width: 294px;
     height: 42px;
     border-radius: 4px;
@@ -70,13 +70,13 @@ const S = {
     color: var(--font-black, var(--Black, #242424));
     ${styleFont.labelLarge}
   `,
-  ConsentArea: styled(FlexBox)`
+  ConsentArea: styled(Flex)`
     flex-direction: column;
     margin-top: 8px;
     margin-bottom: 8px;
     gap: 12px;
   `,
-  CheckConsent: styled(FlexBoxAlignCenter)`
+  CheckConsent: styled(FlexAlign)`
     width: 294px;
     height: 24px;
     padding: 0 12px;

@@ -3,7 +3,7 @@ import { S } from './StyledBottomFunction';
 import { IconLinkCopy, IconLinkFacebook, IconLinkKakao, IconLinkTwitter, IconUnLink } from 'src/components/icons';
 import { useLocation } from 'react-router';
 import { toast } from 'react-toastify';
-import { LOGO_IMAGE, VERCEL_URL } from 'src/utility/guide';
+import { IMAGE_LOGO, URL_VERCEL } from 'src/utility/message';
 
 interface BottomShareProps {
   title: string;
@@ -14,7 +14,7 @@ interface BottomShareProps {
 
 const BottomShare = ({ title, likeCount, commentCount, sharedCount }: BottomShareProps) => {
   const { pathname } = useLocation();
-  const shareUrl = VERCEL_URL + pathname;
+  const shareUrl = URL_VERCEL + pathname;
 
   const clickFacebook = () => {
     window.open(`http://www.facebook.com/sharer/sharer.php?u=${shareUrl}`);
@@ -30,7 +30,7 @@ const BottomShare = ({ title, likeCount, commentCount, sharedCount }: BottomShar
       objectType: 'feed',
       content: {
         title,
-        imageUrl: LOGO_IMAGE,
+        imageUrl: IMAGE_LOGO,
         link: {
           webUrl: shareUrl
         }

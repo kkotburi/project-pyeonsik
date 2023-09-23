@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
-
+const GlobalStyle = createGlobalStyle`
 #react-confirm-alert-firm-svg {
   display: none;
 }
@@ -67,3 +66,5 @@ table {
 	border-spacing: 0;
 }
 `;
+
+export default GlobalStyle;

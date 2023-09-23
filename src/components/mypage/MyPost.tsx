@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { useQueries } from '@tanstack/react-query';
 import { getMyBookMarkById, getMyLikePostById, getMyPostsById } from '../../api/posts';
 import useLoginUserId from 'src/hooks/useLoginUserId';
-import { Post } from 'src/types/types';
+import { Post } from 'src/types/common';
 import { css, styled } from 'styled-components';
 import PostCards from '../renderPosts/PostCards';
-import { FlexBox } from 'src/styles/styleBox';
+import { Flex } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import ProgressCircle from 'src/components/ProgressCircle';
 
@@ -134,7 +134,7 @@ const MyPost = () => {
 export default MyPost;
 
 const S = {
-  ButtonArea: styled(FlexBox)`
+  ButtonArea: styled(Flex)`
     gap: 5px;
     justify-content: flex-end;
     position: fixed;

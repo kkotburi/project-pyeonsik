@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Product } from 'src/types/types';
-import { FlexBoxAlignCenter, FlexBoxCenter } from 'src/styles/styleBox';
+import { Product } from 'src/types/common';
+import { FlexAlign, FlexCenter } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import { setBrandName } from 'src/function/setBrandName';
-import { ERROR_IMG } from 'src/utility/guide';
+import { IMAGE_ERROR } from 'src/utility/message';
 
 interface Props {
   data: Product;
@@ -27,7 +27,7 @@ const ProdCard = ({ data }: Props) => {
         <S.ProdPrice>{data.price}</S.ProdPrice>
       </S.ProdInfoBox>
       <S.ProdInnerBox>
-        <S.ProdImg $src={data.prodImg} onError={ERROR_IMG} />
+        <S.ProdImg $src={data.prodImg} onError={IMAGE_ERROR} />
       </S.ProdInnerBox>
     </S.ProdBox>
   );
@@ -48,7 +48,7 @@ const S = {
     position: relative;
     background-color: white;
   `,
-  EventBar: styled(FlexBoxCenter)<ColorProps>`
+  EventBar: styled(FlexCenter)<ColorProps>`
     height: 28px;
     gap: 4px;
     background-color: ${(props) => {
@@ -89,7 +89,7 @@ const S = {
 
     ${styleFont.bodyMedium}
   `,
-  ProdInfoBox: styled(FlexBoxAlignCenter)`
+  ProdInfoBox: styled(FlexAlign)`
     position: absolute;
     width: 100%;
     bottom: 0;

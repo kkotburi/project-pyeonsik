@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { atom, useAtom } from 'jotai';
 import supabase from 'src/lib/supabaseClient';
-import { Post, Likes } from 'src/types/types';
+import { Post, Likes } from 'src/types/common';
 
 export const postsAtom = atom<Post[]>([]);
 export const likesAtom = atom<Likes[]>([]);

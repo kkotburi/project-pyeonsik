@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { Post } from 'src/types/types';
-import CreatedAt from 'src/utility/CreatedAt';
+import { Post } from 'src/types/common';
+import CreatedAt from 'src/components/CreatedAt';
 import { IconOrgPost } from 'src/components/icons';
 import styled from 'styled-components';
-import { FlexBoxAlignCenter, FlexBoxJustifyCenter } from 'src/styles/styleBox';
+import { FlexAlign, FlexJustify } from 'src/styles/styleFlex';
 import { styleFont } from 'src/styles/styleFont';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
@@ -63,7 +63,7 @@ export const S = {
     border-radius: 10px;
   `,
 
-  OrgTextBox: styled(FlexBoxAlignCenter)`
+  OrgTextBox: styled(FlexAlign)`
     margin: 0px 0px 10px 0px;
     gap: 4px;
   `,
@@ -83,7 +83,7 @@ export const S = {
     line-height: 24px;
   `,
 
-  OrgContentsBox: styled(FlexBoxJustifyCenter)`
+  OrgContentsBox: styled(FlexJustify)`
     height: 80px;
     padding: 16px;
     gap: 8px;
@@ -106,7 +106,7 @@ export const S = {
     ${styleFont.labelLarge}
   `,
 
-  OrgInfoBox: styled(FlexBoxAlignCenter)`
+  OrgInfoBox: styled(FlexAlign)`
     gap: 4px;
 
     color: var(--font-black, var(--black, #242424));

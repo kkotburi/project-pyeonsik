@@ -7,7 +7,7 @@ import { useAtom } from 'jotai';
 import { useQueryClient } from '@tanstack/react-query';
 import supabase from 'src/lib/supabaseClient';
 import { toast } from 'react-toastify';
-import { FlexBoxCenter } from 'src/styles/styleBox';
+import { FlexCenter } from 'src/styles/styleFlex';
 
 const MypageSideBarButtonTab = () => {
   const location = useLocation();
@@ -76,7 +76,7 @@ const S = {
     padding: 8px 10px;
   `,
 
-  Icon: styled(FlexBoxCenter)`
+  Icon: styled(FlexCenter)`
     width: 20px;
     height: 20px;
     margin-right: 4px;
