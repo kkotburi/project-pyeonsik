@@ -8,7 +8,7 @@
 
 🔗 [IP 주소](https://pyeonsik.vercel.app/)
 
-📜 [Brochure]([https://www.notion.so/SE7EN-DAYS-S-A-18c506d357b743c78f58a76550c92d40](https://kkotburi-sparta.notion.site/54f3a597f49245c6895dfa68b6aeeba6?pvs=4))
+📜 [Brochure](https://kkotburi-sparta.notion.site/54f3a597f49245c6895dfa68b6aeeba6?pvs=4)
 
 #### 📌 핵심 기능
 
