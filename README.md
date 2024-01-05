@@ -6,7 +6,7 @@
 
 <br/>
 
-🔗 [IP 주소](https://pyeonsik.vercel.app/)
+🔗 [배포 주소](https://pyeonsik.vercel.app/)
 
 📜 [Brochure](https://kkotburi-sparta.notion.site/54f3a597f49245c6895dfa68b6aeeba6?pvs=4)
 
